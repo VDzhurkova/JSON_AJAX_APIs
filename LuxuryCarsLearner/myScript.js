@@ -21,7 +21,31 @@ function loadData(){
 			if(myRequest.readyState == 4 && myRequest.status == 200){
 
 				var myData = JSON.parse(myRequest.responseText);
-				console.log(myData);
+
+				if(manufacturerStored == ""){
+
+
+					function clearAll(){
+
+						var hideText = document.getElementsByClassName("data");
+
+						for (var i=0;i<hideText.length;i++){
+									hideText[i].innerHTML = "";
+
+						}
+					}
+
+					clearAll();
+					document.getElementById("messageAlert").innerHTML = "Please you must choose a car manufacturer to load data";
+
+				 }
+
+				else {
+
+							document.getElementById("manufacturerC").innerHTML = myData.data[manufacturerStored].manufacturer;
+							document.getElementById("modelC").innerHTML = myData.data[manufacturerStored].model;
+							document.getElementById("priceC").innerHTML = myData.data[manufacturerStored].price;
+				}
 
 			}
 
