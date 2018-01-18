@@ -45,6 +45,23 @@ function loadData(){
 							document.getElementById("manufacturerC").innerHTML = myData.data[manufacturerStored].manufacturer;
 							document.getElementById("modelC").innerHTML = myData.data[manufacturerStored].model;
 							document.getElementById("priceC").innerHTML = myData.data[manufacturerStored].price;
+							document.getElementById("descriptionC").innerHTML = myData.data[manufacturerStored].description;
+							
+							document.getElementById("overallC").innerHTML = myData.data[manufacturerStored].quality[0].rating;
+							document.getElementById("mechanicalC").innerHTML = myData.data[manufacturerStored].quality[1].rating;
+							document.getElementById("powertrainC").innerHTML = myData.data[manufacturerStored].quality[2].rating;
+							document.getElementById("bodyC").innerHTML = myData.data[manufacturerStored].quality[3].rating;
+							document.getElementById("interiorC").innerHTML = myData.data[manufacturerStored].quality[4].rating;
+							document.getElementById("accessoriesC").innerHTML = myData.data[manufacturerStored].quality[5].rating;
+                    
+                    
+                             var myVideo = document.getElementById("videoC");
+                             myVideo.src = myData.data[manufacturerStored].video;
+
+                             var myPicture = document.getElementById("imgC");
+                             myPicture.src = myData.data[manufacturerStored].img;
+
+                         
 				}
 
 			}
